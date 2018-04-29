@@ -1,0 +1,28 @@
+{
+  "name": "whyquit-prototype-server",
+  "version": "1.0.0",
+  "description": "Wrapper of WhyQuit.com website with (hopefully) modernized look and feel",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nickredmond/whyquit-prototype-server.git"
+  },
+  "keywords": [
+    "tobacco",
+    "quit",
+    "smoking",
+    "health",
+    "addiction",
+    "cold",
+    "turkey"
+  ],
+  "author": "nicholas.john.redmond@gmail.com",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/nickredmond/whyquit-prototype-server/issues"
+  },
+  "homepage": "https://github.com/nickredmond/whyquit-prototype-server#readme"
+}
