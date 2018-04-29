@@ -4,16 +4,70 @@ const port = 3000;
 
 // other dependencies
 const http = require("http-request");
+//const DomParser = require("dom-parser");
+const fs = require("fs");
 
-app.get("/whyquit/source", (request, response) => {
-    var request = http.get("http://whyquit.com", function(err, externalResponse) {
-        if (err) {
-            console.log("error occurred getting source of whyquit.com: " + err.toString());
-        }
+// var whyquitDom = false;
+// datetime lastretrieved; get on the daily?
+
+// app.get("/whyquit/source", (request, response) => {
+//     var request = http.get("http://whyquit.com", function(err, externalResponse) {
+//         if (err) {
+//             console.log("error occurred getting source of whyquit.com: " + err.toString());
+//         }
     
-        var responseContent = externalResponse.buffer.toString();
-        response.send(responseContent);
-    });
+//         var responseContent = externalResponse.buffer.toString();
+//         var parser = new DomParser();
+//         var whyquitDom = domParser.parseFromString(whyQuitContent, "text/html");
+
+//         response.set("Access-Control-Allow-Origin", "*");
+//         response.send(responseContent);
+//     });
+// });
+
+var SECONDARY_STORIES = [
+    {
+        "title": "",
+        "description": "",
+        "whyquit_link": ""
+    }
+];
+var getSecondaryStories = function() {
+    
+};
+
+var TOP_STORIES = [
+    {
+        "title": "The Law of Addiction",
+        "imageFilename": "law-of-addiction.png",
+        "whyquit_link": "http://whyquit.com/freedom/the-law-of-addiction/"
+    },
+    {
+        "title": "Freedom from Nicotine Book",
+        "imageFilename": "freedom-from-nicotine.png",
+        "whyquit_link": "http://whyquit.com/ffn/index.html"
+    }
+];
+var getTopStories = function() {
+    return TOP_STORIES;
+};
+
+var allowAnyOrigin = function(response) {
+    response.set("Access-Control-Allow-Origin", "*");
+};
+
+app.get("/whyquit/images/:imageName", (request, response) => {
+    var imageName = request.params.imageName;
+    var img = fs.readFileSync("./images/" + imageName);
+    allowAnyOrigin(response);
+    response.writeHead(200, { "Content-Type": "img/jpg" });
+    response.end(img, "binary");
+});
+
+app.get("/whyquit/top-stories", (request, response) => {
+    var topStories = getTopStories();
+    allowAnyOrigin(response);
+    response.send(topStories);
 });
 
 app.listen(port, (err) => {
