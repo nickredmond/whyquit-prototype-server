@@ -123,6 +123,10 @@ app.get("/whyquit/images/too-young/:imageName", (request, response) => {
     returnImageData(request.params.imageName, "./images/too-young", response);
 });
 
+app.get("/whyquit/images/icons/:imageName", (request, response) => {
+    returnImageData(request.params.imageName, "./images/icons", response);
+});
+
 app.get("/whyquit/top-stories", (request, response) => {
     var topStories = getTopStories();
     allowAnyOrigin(response);
