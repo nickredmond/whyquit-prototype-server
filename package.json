@@ -4,6 +4,7 @@
   "description": "Wrapper of WhyQuit.com website with (hopefully) modernized look and feel",
   "main": "index.js",
   "scripts": {
+    "start": "node index.js",
     "test": "npm test"
   },
   "repository": {
