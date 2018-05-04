@@ -29,17 +29,17 @@ var SECONDARY_STORIES = [
     {
         "title": "Quitting for New Year's?",
         "description": "Why 12 out of 13 New Year's quit smoking resolutions fail",
-        "whyquit_link": "http://whyquit.com/pr/122711.html"
+        "linkAddress": "http://whyquit.com/pr/122711.html"
     },
     {
         "title": "Dangers of Nicotine Replacement",
         "description": "10 studies that scream, \"Leave replacement nicotine alone!\"",
-        "whyquit_link": "http://whyquit.com/pr/010115.html"
+        "linkAddress": "http://whyquit.com/pr/010115.html"
     },
     {
         "title": "Thinking about E-Cigarettes?",
         "description": "Ten reasons to try cold-turkey before e-cigarettes",
-        "whyquit_link": "http://whyquit.com/pr/101413.html"
+        "linkAddress": "http://whyquit.com/pr/101413.html"
     }
 ];
 var getSecondaryStories = function() {
@@ -50,12 +50,12 @@ var TOP_STORIES = [
     {
         "title": "The Law of Addiction",
         "imageFilename": "law-of-addiction.png",
-        "whyquit_link": "http://whyquit.com/freedom/the-law-of-addiction/"
+        "linkAddress": "http://whyquit.com/freedom/the-law-of-addiction/"
     },
     {
         "title": "Freedom from Nicotine Book",
         "imageFilename": "freedom-from-nicotine.png",
-        "whyquit_link": "http://whyquit.com/ffn/index.html"
+        "linkAddress": "http://whyquit.com/ffn/index.html"
     }
 ];
 var getTopStories = function() {
@@ -67,37 +67,37 @@ var TOO_YOUNG_INFO = [
         "victim_name": "Noni",
         "victim_age": 32,
         "imageFilename": "noni.jpg",
-        "whyquit_link": "http://whyquit.com/whyquit/A_Noni.html"
+        "linkAddress": "http://whyquit.com/whyquit/A_Noni.html"
     },
     {
         "victim_name": "Kim",
         "victim_age": 44,
         "imageFilename": "kim.jpg",
-        "whyquit_link": "http://whyquit.com/whyquit/A_Kim.html"
+        "linkAddress": "http://whyquit.com/whyquit/A_Kim.html"
     },
     {
         "victim_name": "Quentin",
         "victim_age": 23,
         "imageFilename": "quentin.jpg",
-        "whyquit_link": "http://whyquit.com/whyquit/A_Quentin.html"
+        "linkAddress": "http://whyquit.com/whyquit/A_Quentin.html"
     },
     {
         "victim_name": "Deborah",
         "victim_age": 38,
         "imageFilename": "deborah.jpg",
-        "whyquit_link": "http://whyquit.com/whyquit/A_Deborah.html"
+        "linkAddress": "http://whyquit.com/whyquit/A_Deborah.html"
     },
     {
         "victim_name": "Bryan",
         "victim_age": 33,
         "imageFilename": "bryan.jpg",
-        "whyquit_link": "http://whyquit.com/whyquit/BryanLeeCurtis.html"
+        "linkAddress": "http://whyquit.com/whyquit/BryanLeeCurtis.html"
     },
     {
         "victim_name": "Carrie",
         "victim_age": 33,
         "imageFilename": "carrie.jpg",
-        "whyquit_link": "http://whyquit.com/whyquit/notables.html"
+        "linkAddress": "http://whyquit.com/whyquit/notables.html"
     }
 ];
 var getTooYoungInfo = function() {
