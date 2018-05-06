@@ -64,38 +64,38 @@ var getTopStories = function() {
 
 var TOO_YOUNG_INFO = [
     {
-        "victim_name": "Noni",
-        "victim_age": 32,
+        "name": "Noni",
+        "age": 32,
         "imageFilename": "noni.jpg",
         "linkAddress": "http://whyquit.com/whyquit/A_Noni.html"
     },
     {
-        "victim_name": "Kim",
-        "victim_age": 44,
+        "name": "Kim",
+        "age": 44,
         "imageFilename": "kim.jpg",
         "linkAddress": "http://whyquit.com/whyquit/A_Kim.html"
     },
     {
-        "victim_name": "Quentin",
-        "victim_age": 23,
+        "name": "Quentin",
+        "age": 23,
         "imageFilename": "quentin.jpg",
         "linkAddress": "http://whyquit.com/whyquit/A_Quentin.html"
     },
     {
-        "victim_name": "Deborah",
-        "victim_age": 38,
+        "name": "Deborah",
+        "age": 38,
         "imageFilename": "deborah.jpg",
         "linkAddress": "http://whyquit.com/whyquit/A_Deborah.html"
     },
     {
-        "victim_name": "Bryan",
-        "victim_age": 33,
+        "name": "Bryan",
+        "age": 33,
         "imageFilename": "bryan.jpg",
         "linkAddress": "http://whyquit.com/whyquit/BryanLeeCurtis.html"
     },
     {
-        "victim_name": "Carrie",
-        "victim_age": 33,
+        "name": "Carrie",
+        "age": 33,
         "imageFilename": "carrie.jpg",
         "linkAddress": "http://whyquit.com/whyquit/notables.html"
     }
