@@ -4,26 +4,7 @@ const port = process.env.PORT || 3000;
 
 // other dependencies
 const http = require("http-request");
-//const DomParser = require("dom-parser");
 const fs = require("fs");
-
-// var whyquitDom = false;
-// datetime lastretrieved; get on the daily?
-
-// app.get("/whyquit/source", (request, response) => {
-//     var request = http.get("http://whyquit.com", function(err, externalResponse) {
-//         if (err) {
-//             console.log("error occurred getting source of whyquit.com: " + err.toString());
-//         }
-    
-//         var responseContent = externalResponse.buffer.toString();
-//         var parser = new DomParser();
-//         var whyquitDom = domParser.parseFromString(whyQuitContent, "text/html");
-
-//         response.set("Access-Control-Allow-Origin", "*");
-//         response.send(responseContent);
-//     });
-// });
 
 var SECONDARY_STORIES = [
     {
@@ -104,6 +85,33 @@ var getTooYoungInfo = function() {
     return TOO_YOUNG_INFO;
 };
 
+var EDUCATION_ITEMS = [
+    {
+        "title": "Quitting: video lessons",
+        "description": "Imagine having your very own stop-smoking coach; one of the world's best. " + 
+            "Joel's free videos have been watched more than 4 million times as of 2013. Discover what " + 
+            "happens once we become more dependency-recovery savvy than our addiction is strong!",
+        "linkAddress": "http://whyquit.com/joel#video"
+    },
+    {
+        "title": "Withdrawal symptoms",
+        "description": "Recovery is the time needed to allow the brain to again grow comfortable functioning " + 
+            "without nicotine. Learn how to better manage your recovery symptoms so you can learn how to " +
+            "comfortably engage all aspects of life without a want or need for nicotine.",
+        "linkAddress": "http://whyquit.com/whyquit/A_Symptoms.html"
+    },
+    {
+        "title": "Tips for recovery",
+        "description": "There are many simple tips that could help nicotine addicts with some of the challenges " +
+            "of quitting, including but limited to stress-related anxieties, healthy eating, reasons to quit, " +
+            "excuses for relapse, and subconscious nicotine use triggers.",
+        "linkAddress": "http://whyquit.com/Tips2007.pdf"
+    }
+];
+var getEducationItems = function() {
+    return EDUCATION_ITEMS;
+};
+
 var allowAnyOrigin = function(response) {
     response.set("Access-Control-Allow-Origin", "*");
 };
@@ -144,6 +152,12 @@ app.get("/whyquit/too-young", (request, response) => {
     allowAnyOrigin(response);
     response.send(tooYoungInfo);
 });
+
+app.get("/whyquit/education", (request, response) => {
+    var educationItems = getEducationItems();
+    allowAnyOrigin(response);
+    response.send(educationItems);
+})
 
 app.listen(port, (err) => {
     if (err) {
