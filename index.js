@@ -91,21 +91,24 @@ var EDUCATION_ITEMS = [
         "description": "Imagine having your very own stop-smoking coach; one of the world's best. " + 
             "Joel's free videos have been watched more than 4 million times as of 2013. Discover what " + 
             "happens once we become more dependency-recovery savvy than our addiction is strong!",
+        "imageFilename": "joelvideo.gif",
         "linkAddress": "http://whyquit.com/joel#video"
-    },
-    {
-        "title": "Withdrawal symptoms",
-        "description": "Recovery is the time needed to allow the brain to again grow comfortable functioning " + 
-            "without nicotine. Learn how to better manage your recovery symptoms so you can learn how to " +
-            "comfortably engage all aspects of life without a want or need for nicotine.",
-        "linkAddress": "http://whyquit.com/whyquit/A_Symptoms.html"
     },
     {
         "title": "Tips for recovery",
         "description": "There are many simple tips that could help nicotine addicts with some of the challenges " +
             "of quitting, including but limited to stress-related anxieties, healthy eating, reasons to quit, " +
             "excuses for relapse, and subconscious nicotine use triggers.",
+        "imageFilename": null,
         "linkAddress": "http://whyquit.com/Tips2007.pdf"
+    },
+    {
+        "title": "Withdrawal symptoms",
+        "description": "Recovery is the time needed to allow the brain to again grow comfortable functioning " + 
+            "without nicotine. Learn how to better manage your recovery symptoms so you can learn how to " +
+            "comfortably engage all aspects of life without a want or need for nicotine.",
+        "imageFilename": "nicneedle.jpg",
+        "linkAddress": "http://whyquit.com/whyquit/A_Symptoms.html"
     }
 ];
 var getEducationItems = function() {
@@ -133,6 +136,10 @@ app.get("/whyquit/images/too-young/:imageName", (request, response) => {
 
 app.get("/whyquit/images/icons/:imageName", (request, response) => {
     returnImageData(request.params.imageName, "./images/icons", response);
+});
+
+app.get("/whyquit/images/education/:imageName", (request, response) => {
+    returnImageData(request.params.imageName, "./images/education", response);
 });
 
 app.get("/whyquit/top-stories", (request, response) => {
