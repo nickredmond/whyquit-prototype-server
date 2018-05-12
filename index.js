@@ -95,6 +95,14 @@ var EDUCATION_ITEMS = [
         "linkAddress": "http://whyquit.com/joel#video"
     },
     {
+        "title": "Withdrawal symptoms",
+        "description": "Recovery is the time needed to allow the brain to again grow comfortable functioning " + 
+            "without nicotine. Learn how to better manage your recovery symptoms so you can learn how to " +
+            "comfortably engage all aspects of life without a want or need for nicotine.",
+        "imageFilename": "nicneedle.jpg",
+        "linkAddress": "http://whyquit.com/whyquit/A_Symptoms.html"
+    },
+    {
         "title": "Tips for recovery",
         "description": "There are many simple tips that could help nicotine addicts with some of the challenges " +
             "of quitting, including but limited to stress-related anxieties, healthy eating, reasons to quit, " +
@@ -103,16 +111,32 @@ var EDUCATION_ITEMS = [
         "linkAddress": "http://whyquit.com/Tips2007.pdf"
     },
     {
-        "title": "Withdrawal symptoms",
-        "description": "Recovery is the time needed to allow the brain to again grow comfortable functioning " + 
-            "without nicotine. Learn how to better manage your recovery symptoms so you can learn how to " +
-            "comfortably engage all aspects of life without a want or need for nicotine.",
-        "imageFilename": "nicneedle.jpg",
-        "linkAddress": "http://whyquit.com/whyquit/A_Symptoms.html"
+        "title": "Smoking's impact on lungs",
+        "description": "Smokers often feel they take in smoke and then blow most of it out, when in actuality, " + 
+            "only a very small percentage comes out. Much damage can occur, but damage is reversible if " +
+            "you quit in time.",
+        "imageFilename": "palmolive_demo.jpg",
+        "linkAddress": "http://whyquit.com/joel/Joel_02_17_smoke_in_lung.html"
+    },
+    {
+        "title": "Nicotine addiction 101",
+        "description": "Nicotine dependency, like alcoholism, is a real mental illness. While one may fully and " + 
+            "comfortably arrest chemical addiction, there is no cure, though full recovery is entirely do-able for all. " + 
+            "Roughly half of quitters report that recovery was far easier than expected, especially when taking it \"one " +
+            "day at a time\".",
+        "imageFilename": "needlemarlboro.gif",
+        "linkAddress": "http://whyquit.com/whyquit/LinksAAddiction.html"
+    },
+    {
+        "title": "Manage cravings and stress",
+        "description": "For new quitters, many cravings may be coming, but the power of your crave generator fizzles " +
+            "a bit with each passing day. With each craving encountered there's one less triggering cue to extinguish.",
+        "imageFilename": null,
+        "linkAddress": "http://whyquit.com/whyquit/Links_CravesAndStress.html"
     }
 ];
-var getEducationItems = function() {
-    return EDUCATION_ITEMS;
+var getEducationItems = function(skip, take) {
+    return EDUCATION_ITEMS.slice(skip, skip + take);
 };
 
 var allowAnyOrigin = function(response) {
@@ -161,7 +185,9 @@ app.get("/whyquit/too-young", (request, response) => {
 });
 
 app.get("/whyquit/education", (request, response) => {
-    var educationItems = getEducationItems();
+    var skip = request.query.size * (request.query.pageNumber - 1);
+    var take = request.query.size;
+    var educationItems = getEducationItems(skip, take);
     allowAnyOrigin(response);
     response.send(educationItems);
 })
