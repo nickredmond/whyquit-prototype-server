@@ -139,6 +139,24 @@ var getEducationItems = function(skip, take) {
     return EDUCATION_ITEMS.slice(skip, skip + take);
 };
 
+var RESOURCE_LINKS = [
+    {
+        "title": "Ex-smoker messages",
+        "linkAddress": "http://whyquit.com/whyquit/turkeys.html"
+    },
+    {
+        "title": "Free quitting meters",
+        "linkAddress": "http://whyquit.com/whyquit/LinksDMeters.html"
+    },
+    {
+        "title": "Quitting quiz",
+        "linkAddress": "http://whyquit.com/whyquit/Quitting.htm"
+    }
+];
+var getResourceLinks = function(skip, take) {
+    return RESOURCE_LINKS.slice(skip, skip + take);
+};
+
 var allowAnyOrigin = function(response) {
     response.set("Access-Control-Allow-Origin", "*");
 };
@@ -190,7 +208,15 @@ app.get("/whyquit/education", (request, response) => {
     var educationItems = getEducationItems(skip, take);
     allowAnyOrigin(response);
     response.send(educationItems);
-})
+});
+
+app.get("/whyquit/resources", (request, response) => {
+    var skip = request.query.size * (request.query.pageNumber - 1);
+    var take = request.query.size;
+    var resourceLinks = getResourceLinks(skip, take);
+    allowAnyOrigin(response);
+    response.send(resourceLinks);
+});
 
 app.listen(port, (err) => {
     if (err) {
