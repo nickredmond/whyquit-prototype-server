@@ -37,6 +37,11 @@ var TOP_STORIES = [
         "title": "Freedom from Nicotine Book",
         "imageFilename": "freedom-from-nicotine.png",
         "linkAddress": "http://whyquit.com/ffn/index.html"
+    },
+    {
+        "title": "One Hour at a Time",
+        "imageFilename": "72hours.gif",
+        "linkAddress": "http://whyquit.com/whyquit/A_QuitOneHour.html"
     }
 ];
 var getTopStories = function() {
